@@ -60,7 +60,7 @@ app.post("/api/notes", (req, res) => {
     const newNote = {
       title,
       text,
-      note_id: uuid(),
+      id: uuid(),
     };
 
     readAndAppend(newNote, "./db/db.json");
@@ -73,6 +73,17 @@ app.post("/api/notes", (req, res) => {
     res.json(response);
   } else {
     res.json("Error in saving note");
+  }
+});
+
+app.delete("/api/notes:id", (req, res) => {
+  const requestedNote = req.params.id;
+
+  for (let i = 0; i < noteList.length; i++) {
+    if (requestedNote === noteList[i].id) {
+      return res.json(data[i]);
+    }
+    return res.json("No match found");
   }
 });
 
