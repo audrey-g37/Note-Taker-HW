@@ -77,10 +77,10 @@ app.post("/api/notes", (req, res) => {
 });
 
 app.delete("/api/notes:id", (req, res) => {
-  const requestedNote = req.params.id;
+  const requestedNoteId = req.params.id;
 
   for (let i = 0; i < noteList.length; i++) {
-    if (requestedNote === noteList[i].id) {
+    if (requestedNoteId === noteList[i].id) {
       return res.json(data[i]);
     }
     return res.json("No match found");
