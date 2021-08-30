@@ -25,7 +25,7 @@ Enter a 'title' and a description in the 'note text' section. The note will save
 
 ![Example Note List](./images/screenshot-of-site.png)
 
-[Live Website](https://boiling-spire-25558.herokuapp.com/notes)
+[Live Website](https://boiling-spire-25558.herokuapp.com/)
 
 ## License
 
