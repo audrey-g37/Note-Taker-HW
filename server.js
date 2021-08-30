@@ -76,16 +76,20 @@ app.post("/api/notes", (req, res) => {
   }
 });
 
-app.delete("/api/notes/id:id", (req, res) => {
-  const requestedNoteId = req.params.id;
-
-  for (let i = 0; i < noteList.length; i++) {
-    if (requestedNoteId === noteList[i].id) {
-      return res.json(data[i]);
-    }
-    return res.json("No match found");
-  }
-});
+// app.delete("/api/notes/:id", (req, res) => {
+//   readFromFile("./db/db.json", "utf8", (err, data) => {
+//     if (err) {
+//       console.error(err);
+//     } else {
+//       const requestedNoteId = req.params.id;
+//       const storedNotes = JSON.parse(data);
+//       if (requestedNoteId === storedNotes.id) {
+//         return (storedNotes = {});
+//       }
+//       return res.json("No match found");
+//     }
+//   });
+// });
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
