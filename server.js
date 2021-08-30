@@ -76,7 +76,7 @@ app.post("/api/notes", (req, res) => {
   }
 });
 
-app.delete("/api/notes:id", (req, res) => {
+app.delete("/api/notes/id", (req, res) => {
   const requestedNoteId = req.params.id;
 
   for (let i = 0; i < noteList.length; i++) {
